@@ -1,0 +1,87 @@
+1.2.11
+
+- Allow binary 0.7.*
+
+1.2.10
+
+- Allow cryptohash version 0.9.*
+- Cleanup tests
+
+1.2.9
+
+- Bumped dependency on 'cryptohash'.
+
+1.2.8
+
+- Bumped various dependencies and cleaned up dependencies in general.
+
+1.2.7
+
+- Added stricter constraints on 'random' package.
+
+1.2.6
+
+- Add module 'V4' to direct attention to our Random instance
+
+- In module 'V1' seed the generator with a random number
+  if the hardware MAC address could not be discovered.
+
+- Fix and cleanup various haddocks.
+
+- In module docs, warn about MD5 use in Data.UUID.V3 and
+  encourage the reader to use Data.UUID.V5 instead.
+
+1.2.5
+
+- Use 'cryptohash' package for MD5 and SHA1 instead of 'Crypto'
+
+1.2.4
+
+- Unpack Word32 values into UUID constructor.
+
+- Update test suite to QuickCheck 2
+
+- Bump other dependencies in tests/benchmarks
+
+1.2.3
+
+- The Read instance now drops leading spaces in the string to be parsed.
+Thanks to Marc Ziegert for reporting this bug.
+
+- The tests have moved over to the new Cabal test running framework.
+
+1.2.2
+
+- Add functions fromWords/toWords
+
+The goal was to have a total function that can be used to construct
+a UUID, primarily for use by uuid-th.
+
+1.2.1
+
+- Fix concurrency bug in Data.UUID.V1 (thanks to Neil Mitchell for reporting
+and a test case)
+
+1.2.0
+  (Contributors: Antoine Latter & Mark Lentczner)
+
+- added functions toByteString and fromByteString
+- added 'nil' UUID
+- added unit tests and benchmarks, built when configured -ftest
+- major speed up of to/from functions (as well as in general)
+- added version-3 generation (deterministic based on MD5)
+- major changes to internal representation
+	- now uses four strict Word32 values
+	- internal ByteSource classes for easy construction (see Builder.hs)
+- Storable instance now stores in memory as system libraries in C do:
+    16 bytes derived from the network order of the fields, no matter what
+    the host native endianess is.
+- fixed bugs in V1 time and clock stepping, and V1 generated values
+- builds cleanly under GHC's -Wall
+- added CHANGES file
+
+1.1.1
+
+- no longer exporting 'null' from the prelude
+- add 'null' predicate on UUIDs
+- documentation fix (thanks Mark Lentczner)

@@ -24,20 +24,19 @@ MAC address and current system time in "Data.UUID.V1".
 "Data.UUID.V5".
 -}
 
-module Data.UUID
-    (UUID(..)
-    ,null
-    ,nil
-    ,fromByteString
-    ,toByteString
-    ,fromString
-    ,toString
-    ,fromWords
-    ,toWords
-    ,toList
-    ,buildFromBytes
-    ,buildFromWords
-    ) where
+module Data.UUID(UUID(..)
+                ,toList
+                ,buildFromBytes
+                ,buildFromWords
+                ,toString
+                ,fromString
+                ,toByteString
+                ,fromByteString
+                ,toWords
+                ,fromWords
+                ,null
+                ,nil
+                ) where
 
 import Prelude () -- we need to hide Prelude.null
 import Data.UUID.Internal
